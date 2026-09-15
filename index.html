@@ -8,12 +8,12 @@
 <meta name="description" content="Home page concept for Twenty Seven Eleven.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
 <style>
 /* ===========================================================
    Twenty Seven Eleven — home page
    Palette : ink / midnight / paper / rose (from the SS'26 campaign backdrop)
-   Type    : Instrument Sans (the live site's own face) + Bodoni Moda (display)
+   Type    : Instrument Sans throughout — the typeface the live store serves
    =========================================================== */
 :root{
   color-scheme: light;
@@ -28,8 +28,8 @@
   --on-dark:#F2F2F3;
   --on-dark-muted:#A9A9B4;
 
-  --display:"Bodoni Moda","Didot","Times New Roman",serif;
   --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --display:var(--sans);
 
   --ticker-h:30px;
   --nav-h:74px;
@@ -167,9 +167,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero-mark img{width:100%}
 @keyframes settle{from{transform:scale(.975)}to{transform:none}}
 .hero-line{
-  font-family:var(--display);font-weight:400;
-  font-size:clamp(28px,4.4vw,56px);line-height:1.02;
-  margin:0!important;max-width:none!important;letter-spacing:.005em;
+  font-family:var(--display);font-weight:400;text-transform:uppercase;
+  font-size:clamp(17px,2.4vw,30px);line-height:1.2;letter-spacing:.2em;
+  text-indent:.2em;
+  margin:0!important;max-width:none!important;
   text-shadow:0 2px 30px rgba(0,0,0,.25);
 }
 .hero p{
@@ -212,9 +213,9 @@ section{padding-block:clamp(64px,8vw,116px)}
   border-bottom:1px solid var(--line);padding-bottom:16px;
 }
 .sec-head h2{
-  font-family:var(--display);font-weight:400;
-  font-size:clamp(28px,4.2vw,50px);line-height:1;margin:0;
-  letter-spacing:.005em;text-wrap:balance;
+  font-family:var(--display);font-weight:500;text-transform:uppercase;
+  font-size:clamp(15px,1.7vw,21px);line-height:1.2;margin:0;
+  letter-spacing:.2em;text-wrap:balance;
 }
 .sec-head .more{white-space:nowrap;border-bottom:1px solid var(--ink);padding-bottom:3px}
 .sec-head .more:hover{color:var(--rose);border-color:var(--rose)}
@@ -269,14 +270,15 @@ section{padding-block:clamp(64px,8vw,116px)}
 .mtm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 .mtm-body{padding:clamp(44px,6vw,96px) clamp(26px,5vw,84px);display:flex;flex-direction:column;justify-content:center;gap:26px}
 .mtm-body .eyebrow{color:var(--rose)}
-.mtm-body h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.04;margin:0;text-wrap:balance}
+.mtm-body h2{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(15px,1.7vw,21px);letter-spacing:.2em;line-height:1.2;margin:0;text-wrap:balance}
 .mtm-body .lede{color:var(--on-dark-muted);max-width:44ch;margin:0;font-size:14.5px}
 .clist{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column}
 .clist li{border-top:1px solid rgba(242,242,243,.16)}
 .clist li:last-child{border-bottom:1px solid rgba(242,242,243,.16)}
 .clist a{
   display:flex;align-items:baseline;justify-content:space-between;gap:18px;
-  padding:15px 0;font-family:var(--display);font-size:clamp(17px,2vw,23px);
+  padding:16px 0;font-family:var(--display);text-transform:uppercase;
+  font-size:clamp(12px,1.25vw,15px);letter-spacing:.18em;font-weight:400;
   transition:padding-left .45s var(--ease),color .35s var(--ease);
 }
 .clist a em{font-style:normal;font-family:var(--sans);font-size:10px;letter-spacing:.18em;
@@ -292,14 +294,10 @@ section{padding-block:clamp(64px,8vw,116px)}
 .house-img .est{
   position:absolute;right:-14px;bottom:26px;
   background:var(--paper);padding:14px 18px;
-  font-family:var(--display);font-size:13px;letter-spacing:.18em;
+  font-family:var(--display);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
 }
-.house-copy h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.4vw,56px);line-height:1.06;margin:14px 0 22px;text-wrap:balance}
+.house-copy h2{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(15px,1.7vw,21px);letter-spacing:.2em;line-height:1.2;margin:0 0 22px;text-wrap:balance}
 .house-copy p{margin:0 0 18px;max-width:56ch;font-size:15px;color:#3C3B40}
-.house-copy .drop::first-letter{
-  font-family:var(--display);float:left;font-size:58px;line-height:.82;
-  padding:6px 12px 0 0;color:var(--ink);
-}
 
 /* ---------- campaign editorial ---------------------------------------- */
 .camp{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(10px,1.6vw,24px);align-items:end}
@@ -311,7 +309,7 @@ section{padding-block:clamp(64px,8vw,116px)}
 .camp .c2 img{aspect-ratio:3/4}
 .camp .c3{grid-column:span 3;padding-bottom:6px}
 .camp figcaption{padding-top:12px;color:var(--muted);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
-.camp .c3 h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,34px);line-height:1.1;margin:0 0 14px}
+.camp .c3 h3{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(14px,1.5vw,18px);letter-spacing:.2em;line-height:1.3;margin:0 0 16px}
 .camp .c3 p{margin:0 0 20px;color:#3C3B40;font-size:14px}
 
 /* ---------- service row ------------------------------------------------ */
@@ -323,10 +321,21 @@ section{padding-block:clamp(64px,8vw,116px)}
 .service p{margin:0;color:var(--muted);font-size:12.5px}
 
 /* ---------- instagram -------------------------------------------------- */
-.gram{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(6px,1vw,14px)}
-.gram a{display:block;overflow:hidden;aspect-ratio:1;background:#E4E3E6}
-.gram img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),filter .5s var(--ease)}
-.gram a:hover img{transform:scale(1.07)}
+.story{
+  flex:0 0 clamp(180px,16vw,238px);scroll-snap-align:start;
+  position:relative;display:block;overflow:hidden;background:#E4E3E6;
+}
+.story video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;
+  transition:transform 1.2s var(--ease)}
+.story:hover video{transform:scale(1.035)}
+.story::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(12,10,14,.42),transparent 42%);
+}
+.story span{
+  position:absolute;left:14px;bottom:13px;z-index:2;color:#fff;
+  font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+}
 
 /* ---------- footer ----------------------------------------------------- */
 footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,86px) 0}
@@ -363,8 +372,8 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
 #menu .close{font-size:22px;line-height:1}
 #menu nav{display:flex;flex-direction:column}
 #menu nav a{
-  font-family:var(--display);font-size:30px;letter-spacing:.04em;
-  padding:13px 0;border-bottom:1px solid rgba(242,242,243,.13);
+  font-family:var(--display);font-size:clamp(17px,4.5vw,22px);text-transform:uppercase;
+  letter-spacing:.16em;padding:16px 0;border-bottom:1px solid rgba(242,242,243,.13);
 }
 #menu .foot{margin-top:auto;color:var(--on-dark-muted);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
 
@@ -374,7 +383,6 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
   .camp .c1{grid-column:span 6}
   .camp .c2{grid-column:span 6}
   .camp .c3{grid-column:span 12;padding-top:10px}
-  .gram{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:860px){
   .nav-links{display:none}
@@ -389,6 +397,7 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
   .service li:nth-child(3){border-left:0;padding-left:0}
   .service li:nth-child(odd){border-left:0;padding-left:0}
   .prod{flex:0 0 58vw}
+  .story{flex:0 0 40vw}
 }
 @media (max-width:640px){
   /* Search and Account live in the menu overlay on a phone — the three
@@ -408,6 +417,7 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
   .foot-top{grid-template-columns:1fr}
   .hero{height:clamp(500px,82svh,700px)}
   .prod{flex:0 0 68vw}
+  .story{flex:0 0 52vw}
   .house-img .est{left:auto;right:12px;bottom:12px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -596,7 +606,7 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
         </div>
         <div class="house-copy">
           <h2>Twenty Seven Eleven</h2>
-          <p class="drop">Twenty-Seven Eleven is a fashion brand founded in 2022. The brand focuses on creating customised clothing that provides a perfect fit.</p>
+          <p>Twenty-Seven Eleven is a fashion brand founded in 2022. The brand focuses on creating customised clothing that provides a perfect fit.</p>
           <p>The brand offers dedicated service and attention to detail to make your shopping experience memorable. The studio is in Kolkata.</p>
           <a class="btn btn-ink" href="https://twentyseveneleven.in/pages/about-brand" style="margin-top:8px">About us</a>
         </div>
@@ -641,22 +651,19 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
     </div>
   </section>
 
-  <!-- INSTAGRAM ---------------------------------------------------------------- -->
-  <section>
+  <!-- STORIES ------------------------------------------------------------- -->
+  <section id="stories">
     <div class="wrap">
       <div class="sec-head">
-        <div>
-          <h2>@twentyseven_eleven_official</h2>
-        </div>
-        <a class="label more" href="https://www.instagram.com/twentyseven_eleven_official/">Follow</a>
+        <div><h2>Stories</h2></div>
+        <a class="label more" href="https://www.instagram.com/twentyseven_eleven_official/">@twentyseven_eleven_official</a>
       </div>
-      <div class="gram">
-        <a href="#"><img src="assets/p3.jpg" alt="Campaign still" loading="lazy"></a>
-        <a href="#"><img src="assets/ed2.jpg" alt="Campaign still" loading="lazy"></a>
-        <a href="#"><img src="assets/p5.jpg" alt="Campaign still" loading="lazy"></a>
-        <a href="#"><img src="assets/cat-cape.jpg" alt="Campaign still" loading="lazy"></a>
-        <a href="#"><img src="assets/p4.jpg" alt="Campaign still" loading="lazy"></a>
-        <a href="#"><img src="assets/ed1.jpg" alt="Campaign still" loading="lazy"></a>
+      <div class="rail" id="storyrail">
+        <a class="story" href="https://www.instagram.com/twentyseven_eleven_official/"><video src="assets/stories/s1.mp4" poster="assets/stories/s1.jpg" muted loop playsinline webkit-playsinline preload="none"></video><span>Corset Club</span></a>
+        <a class="story" href="https://www.instagram.com/twentyseven_eleven_official/"><video src="assets/stories/s2.mp4" poster="assets/stories/s2.jpg" muted loop playsinline webkit-playsinline preload="none"></video><span>Co-ord Sets</span></a>
+        <a class="story" href="https://www.instagram.com/twentyseven_eleven_official/"><video src="assets/stories/s3.mp4" poster="assets/stories/s3.jpg" muted loop playsinline webkit-playsinline preload="none"></video><span>Cape Sets</span></a>
+        <a class="story" href="https://www.instagram.com/twentyseven_eleven_official/"><video src="assets/stories/s4.mp4" poster="assets/stories/s4.jpg" muted loop playsinline webkit-playsinline preload="none"></video><span>Jumpsuits</span></a>
+        <a class="story" href="https://www.instagram.com/twentyseven_eleven_official/"><video src="assets/stories/s5.mp4" poster="assets/stories/s5.jpg" muted loop playsinline webkit-playsinline preload="none"></video><span>SS '26</span></a>
       </div>
     </div>
   </section>
@@ -769,6 +776,19 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
   document.getElementById('close').addEventListener('click',function(){setMenu(false)});
   menu.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  // stories play only while they are on screen, so nothing downloads unseen
+  var stories=[].slice.call(document.querySelectorAll('.story video'));
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var v=en.target;
+        if(en.isIntersecting){ if(v.preload!=='auto'){v.preload='auto';v.load();} v.play().catch(function(){}); }
+        else { v.pause(); }
+      });
+    },{rootMargin:'120px',threshold:.25});
+    stories.forEach(function(v){io.observe(v)});
+  }
 
   // smooth anchor scrolling with header offset
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
