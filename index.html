@@ -266,29 +266,34 @@ section{padding-block:clamp(64px,8vw,116px)}
 }
 .rail-nav button:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 
-/* ---------- collections panel ---------------------------------------- */
-.mtm{background:var(--midnight);color:var(--on-dark);padding-block:0}
-.mtm-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-.mtm-img{position:relative;min-height:460px;background:#0F1220}
-.mtm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
-.mtm-body{padding:clamp(44px,6vw,96px) clamp(26px,5vw,84px);display:flex;flex-direction:column;justify-content:center;gap:26px}
-.mtm-body .eyebrow{color:var(--rose)}
-.mtm-body h2{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(15px,1.7vw,21px);letter-spacing:.2em;line-height:1.2;margin:0;text-wrap:balance}
-.mtm-body .lede{color:var(--on-dark-muted);max-width:44ch;margin:0;font-size:14.5px}
-.clist{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column}
-.clist li{border-top:1px solid rgba(242,242,243,.16)}
-.clist li:last-child{border-bottom:1px solid rgba(242,242,243,.16)}
-.clist a{
-  display:flex;align-items:baseline;justify-content:space-between;gap:18px;
-  padding:16px 0;font-family:var(--display);text-transform:uppercase;
-  font-size:clamp(12px,1.25vw,15px);letter-spacing:.18em;font-weight:400;
-  transition:padding-left .45s var(--ease),color .35s var(--ease);
+/* ---------- collections lookbook ------------------------------------- */
+.cols{
+  background:var(--midnight);color:var(--on-dark);
+  padding-bottom:calc(clamp(64px,8vw,116px) + clamp(18px,3vw,46px));
 }
-.clist a em{font-style:normal;font-family:var(--sans);font-size:10px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--on-dark-muted);transition:color .35s var(--ease)}
-.clist a:hover{padding-left:10px;color:#fff}
-.clist a:hover em{color:var(--rose)}
-.mtm-body .btn{align-self:flex-start;margin-top:6px}
+.cols .sec-head{border-bottom-color:rgba(242,242,243,.22)}
+.cols .sec-head .more{border-bottom-color:var(--on-dark)}
+.cols .sec-head .more:hover{color:var(--rose);border-color:var(--rose)}
+.colgrid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(22px,3vw,48px) clamp(10px,1.8vw,30px);
+}
+.colcard{display:block}
+.colcard:nth-child(even){transform:translateY(clamp(18px,3vw,46px))}
+.colcard .frame{overflow:hidden;background:#20243C;aspect-ratio:3/4}
+.colcard img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.colcard:hover img{transform:scale(1.045)}
+.colcard .cap{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:10px;padding-top:15px;
+}
+.colcard .cap span{letter-spacing:.2em}
+.colcard .cap em{
+  font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--on-dark-muted);white-space:nowrap;
+  transition:color .35s var(--ease),transform .45s var(--ease);
+}
+.colcard:hover .cap em{color:var(--rose);transform:translateX(4px)}
 
 /* ---------- house / story -------------------------------------------- */
 .house{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,76px);align-items:center}
@@ -388,11 +393,10 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
   .nav-links{display:none}
   .burger{display:flex}
   .nav{grid-template-columns:1fr auto 1fr}
-  .mtm-grid{grid-template-columns:1fr}
-  .mtm-img{min-height:340px}
   .house{grid-template-columns:1fr}
   .house-img{max-width:440px}
   .house-img .est{right:auto;left:-10px}
+  .colgrid{grid-template-columns:1fr 1fr}
   .service ul{grid-template-columns:1fr 1fr}
   .service li:nth-child(3){border-left:0;padding-left:0}
   .service li:nth-child(odd){border-left:0;padding-left:0}
@@ -576,22 +580,38 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
     </div>
   </section>
 
-  <!-- COLLECTION ------------------------------------------------------- -->
-  <section class="mtm" id="collection">
-    <div class="mtm-grid">
-      <div class="mtm-img"><img src="assets/ed1.jpg" alt="Hand-beaded lace midi" loading="lazy"></div>
-      <div class="mtm-body">
-        <h2>The collections</h2>
-        <p class="lede">Customised clothing that provides a perfect fit.</p>
-        <ul class="clist">
-          <li><a href="https://twentyseveneleven.in/collections/ss26">SS '26 <em>Shop</em></a></li>
-          <li><a href="https://twentyseveneleven.in/collections/gelato">Gelato <em>Shop</em></a></li>
-          <li><a href="https://twentyseveneleven.in/collections/aira-winters-embrace">Aira Winter's Embrace <em>Shop</em></a></li>
-          <li><a href="https://twentyseveneleven.in/collections/whimsical-wings">Whimsical Wings <em>Shop</em></a></li>
-          <li><a href="https://twentyseveneleven.in/collections/ebb-flow">Ebb &amp; Flow <em>Shop</em></a></li>
-          <li><a href="https://twentyseveneleven.in/collections/summer-spring">Summer Spring <em>Shop</em></a></li>
-        </ul>
-        <a class="btn btn-light" href="https://twentyseveneleven.in/collections/frontpage">Shop all</a>
+  <!-- COLLECTIONS ------------------------------------------------------ -->
+  <section class="cols" id="collection">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2>The Collections</h2></div>
+        <a class="label more" href="https://twentyseveneleven.in/collections/frontpage">Shop all</a>
+      </div>
+      <div class="colgrid">
+        <a class="colcard" href="https://twentyseveneleven.in/collections/ss26">
+          <div class="frame"><img src="assets/col-ss26.jpg" alt="SS '26 collection" loading="lazy"></div>
+          <div class="cap"><span class="label">SS '26</span><em>Shop &rarr;</em></div>
+        </a>
+        <a class="colcard" href="https://twentyseveneleven.in/collections/gelato">
+          <div class="frame"><img src="assets/col-gelato.jpg" alt="Gelato collection" loading="lazy"></div>
+          <div class="cap"><span class="label">Gelato</span><em>Shop &rarr;</em></div>
+        </a>
+        <a class="colcard" href="https://twentyseveneleven.in/collections/aira-winters-embrace">
+          <div class="frame"><img src="assets/col-aira.jpg" alt="Aira Winter's Embrace collection" loading="lazy"></div>
+          <div class="cap"><span class="label">Aira Winter's Embrace</span><em>Shop &rarr;</em></div>
+        </a>
+        <a class="colcard" href="https://twentyseveneleven.in/collections/whimsical-wings">
+          <div class="frame"><img src="assets/col-whimsical.jpg" alt="Whimsical Wings collection" loading="lazy"></div>
+          <div class="cap"><span class="label">Whimsical Wings</span><em>Shop &rarr;</em></div>
+        </a>
+        <a class="colcard" href="https://twentyseveneleven.in/collections/ebb-flow">
+          <div class="frame"><img src="assets/col-ebb.jpg" alt="Ebb and Flow collection" loading="lazy"></div>
+          <div class="cap"><span class="label">Ebb &amp; Flow</span><em>Shop &rarr;</em></div>
+        </a>
+        <a class="colcard" href="https://twentyseveneleven.in/collections/summer-spring">
+          <div class="frame"><img src="assets/col-summer.jpg" alt="Summer Spring collection" loading="lazy"></div>
+          <div class="cap"><span class="label">Summer Spring</span><em>Shop &rarr;</em></div>
+        </a>
       </div>
     </div>
   </section>
