@@ -131,7 +131,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .bag{display:inline-flex;align-items:baseline;gap:5px}
 .bag em{font-style:normal;font-size:9.5px;color:var(--rose);letter-spacing:0}
 
-.burger{display:none;flex-direction:column;gap:5px;width:22px}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:44px;height:44px;margin-left:-11px;padding:0 11px}
 .burger i{display:block;height:1px;background:currentColor;transition:transform .4s var(--ease)}
 
 .prog{height:1.5px;background:transparent}
@@ -226,7 +227,7 @@ section{padding-block:clamp(64px,8vw,116px)}
 .tile:hover img{transform:scale(1.045)}
 .tile .cap{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-top:14px}
 .tile .cap span{letter-spacing:.2em}
-.tile .cap em{font-style:normal;color:var(--muted);font-size:10px;letter-spacing:.14em;transition:color .35s var(--ease),transform .45s var(--ease)}
+.tile .cap em{font-style:normal;white-space:nowrap;color:var(--muted);font-size:10px;letter-spacing:.14em;transition:color .35s var(--ease),transform .45s var(--ease)}
 .tile:hover .cap em{color:var(--rose);transform:translateX(4px)}
 
 /* ---------- product rail -------------------------------------------- */
