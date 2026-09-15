@@ -383,9 +383,13 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
   .service li:nth-child(odd){border-left:0;padding-left:0}
   .prod{flex:0 0 58vw}
 }
-@media (max-width:560px){
+@media (max-width:640px){
+  /* Search and Account live in the menu overlay on a phone — the three
+     labels together overflow the bar and collide with the logo */
+  .nav-icons button:not(.bag){display:none}
   .nav-links a, .nav-icons button{padding:12px 0}
-  .nav-icons{gap:16px}
+}
+@media (max-width:560px){
   .camp .c1,.camp .c2{grid-column:span 12}
   .camp .c1 img,.camp .c2 img{aspect-ratio:4/5}
   .service li{padding:22px 0}
