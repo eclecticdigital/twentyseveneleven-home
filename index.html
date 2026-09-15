@@ -262,7 +262,7 @@ section{padding-block:clamp(64px,8vw,116px)}
 }
 .rail-nav button:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 
-/* ---------- made to measure ----------------------------------------- */
+/* ---------- collections panel ---------------------------------------- */
 .mtm{background:var(--midnight);color:var(--on-dark);padding-block:0}
 .mtm-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .mtm-img{position:relative;min-height:460px;background:#0F1220}
@@ -271,12 +271,18 @@ section{padding-block:clamp(64px,8vw,116px)}
 .mtm-body .eyebrow{color:var(--rose)}
 .mtm-body h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.04;margin:0;text-wrap:balance}
 .mtm-body .lede{color:var(--on-dark-muted);max-width:44ch;margin:0;font-size:14.5px}
-.steps{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column}
-.steps li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:20px 0;border-top:1px solid rgba(242,242,243,.16)}
-.steps li:last-child{border-bottom:1px solid rgba(242,242,243,.16)}
-.steps .num{font-family:var(--display);font-size:15px;color:var(--rose);letter-spacing:.06em;padding-top:2px}
-.steps h3{margin:0 0 4px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
-.steps p{margin:0;color:var(--on-dark-muted);font-size:13.5px;max-width:42ch}
+.clist{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column}
+.clist li{border-top:1px solid rgba(242,242,243,.16)}
+.clist li:last-child{border-bottom:1px solid rgba(242,242,243,.16)}
+.clist a{
+  display:flex;align-items:baseline;justify-content:space-between;gap:18px;
+  padding:15px 0;font-family:var(--display);font-size:clamp(17px,2vw,23px);
+  transition:padding-left .45s var(--ease),color .35s var(--ease);
+}
+.clist a em{font-style:normal;font-family:var(--sans);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--on-dark-muted);transition:color .35s var(--ease)}
+.clist a:hover{padding-left:10px;color:#fff}
+.clist a:hover em{color:var(--rose)}
 .mtm-body .btn{align-self:flex-start;margin-top:6px}
 
 /* ---------- house / story -------------------------------------------- */
@@ -414,23 +420,23 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
 <header id="hdr">
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track" id="tick">
-      <span>Made to measure on every silhouette <i>✦</i></span>
-      <span>Complimentary fit consultation <i>✦</i></span>
-      <span>Worldwide shipping <i>✦</i></span>
-      <span>SS '26 now in studio <i>✦</i></span>
-      <span>Made to measure on every silhouette <i>✦</i></span>
-      <span>Complimentary fit consultation <i>✦</i></span>
-      <span>Worldwide shipping <i>✦</i></span>
-      <span>SS '26 now in studio <i>✦</i></span>
-    </div>
+      <span>Enjoy 20% OFF on Selected Styles <i>&#10022;</i></span>
+      <span>Discover New Collection at 10% OFF <i>&#10022;</i></span>
+      <span>Enjoy 20% OFF on Selected Styles <i>&#10022;</i></span>
+      <span>Discover New Collection at 10% OFF <i>&#10022;</i></span>
+      <span>Enjoy 20% OFF on Selected Styles <i>&#10022;</i></span>
+      <span>Discover New Collection at 10% OFF <i>&#10022;</i></span>
+      <span>Enjoy 20% OFF on Selected Styles <i>&#10022;</i></span>
+      <span>Discover New Collection at 10% OFF <i>&#10022;</i></span>
+</div>
   </div>
 
   <div class="nav">
     <div class="nav-links">
-      <a href="#collections">Collections</a>
-      <a href="#new">New In</a>
-      <a href="#measure">Made to Measure</a>
-      <a href="#house">The House</a>
+      <a href="https://twentyseveneleven.in/collections/bestseller">Bestseller</a>
+      <a href="#collections">Shop All</a>
+      <a href="#collection">Collection</a>
+      <a href="https://twentyseveneleven.in/pages/contact">Discover</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu"><i></i><i></i><i></i></button>
     <a href="#top" class="logo" aria-label="Twenty Seven Eleven — home"><img class="paper" src="assets/logo-paper.png" alt="Twenty Seven Eleven"><img class="ink" src="assets/logo-ink.png" alt="" aria-hidden="true"></a>
@@ -449,13 +455,13 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
   <section class="hero" style="padding-block:0">
     <video src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline webkit-playsinline preload="metadata"></video>
     <div class="hero-inner">
-      <p class="label eyebrow">Spring / Summer '26 — The Campaign</p>
+      <p class="label eyebrow">SS '26 Collection</p>
       <h1 class="hero-mark"><img src="assets/logo-paper.png" alt="Twenty Seven Eleven"></h1>
-      <p class="hero-line">Cut to your measure.</p>
-      <p>Ready-to-wear corsetry, capes and co-ord sets — made one piece at a time.</p>
+      <p class="hero-line">Made for a perfect fit.</p>
+      <p>Corsets, co-ord sets, capes, dresses and jumpsuits.</p>
       <div class="hero-cta">
-        <a class="btn btn-solid" href="#new">Shop SS '26</a>
-        <a class="btn btn-ghost" href="#measure">Book a fit consultation</a>
+        <a class="btn btn-solid" href="https://twentyseveneleven.in/collections/ss26">Shop SS '26</a>
+        <a class="btn btn-ghost" href="https://twentyseveneleven.in/collections/bestseller">Bestsellers</a>
       </div>
     </div>
     <div class="scroll-cue"><span>Scroll</span><i></i></div>
@@ -468,31 +474,31 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
         <div>
           <h2>Six ways to be dressed</h2>
         </div>
-        <a class="label more" href="#">All collections</a>
+        <a class="label more" href="https://twentyseveneleven.in/collections/frontpage">Shop all</a>
       </div>
 
       <div class="tiles">
-        <a class="tile" href="#">
+        <a class="tile" href="https://twentyseveneleven.in/collections/corset-club">
           <div class="frame"><img src="assets/cat-corset.jpg" alt="Navy draped corset bodice" loading="lazy"></div>
           <div class="cap"><span class="label">Corset Club</span><em>Shop →</em></div>
         </a>
-        <a class="tile" href="#">
+        <a class="tile" href="https://twentyseveneleven.in/collections/co-ord-sets">
           <div class="frame"><img src="assets/cat-coord.jpg" alt="Ivory jacket and column dress co-ord" loading="lazy"></div>
           <div class="cap"><span class="label">Co-ord Sets</span><em>Shop →</em></div>
         </a>
-        <a class="tile" href="#">
+        <a class="tile" href="https://twentyseveneleven.in/collections/cape-set">
           <div class="frame"><img src="assets/cat-cape.jpg" alt="Sheer embroidered cape over mini dress" loading="lazy"></div>
           <div class="cap"><span class="label">Cape Sets</span><em>Shop →</em></div>
         </a>
-        <a class="tile" href="#">
+        <a class="tile" href="https://twentyseveneleven.in/collections/dress">
           <div class="frame"><img src="assets/cat-dress.jpg" alt="Ivory dress with tailored jacket" loading="lazy"></div>
           <div class="cap"><span class="label">Dresses</span><em>Shop →</em></div>
         </a>
-        <a class="tile" href="#">
+        <a class="tile" href="https://twentyseveneleven.in/collections/jumpsuits">
           <div class="frame"><img src="assets/cat-jumpsuit.jpg" alt="Black tailored jumpsuit" loading="lazy"></div>
           <div class="cap"><span class="label">Jumpsuits</span><em>Shop →</em></div>
         </a>
-        <a class="tile" href="#">
+        <a class="tile" href="https://twentyseveneleven.in/collections/skirt">
           <div class="frame"><img src="assets/cat-skirts.jpg" alt="Cobalt cape with black skirt" loading="lazy"></div>
           <div class="cap"><span class="label">Shorts &amp; Skirts</span><em>Shop →</em></div>
         </a>
@@ -505,7 +511,7 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <h2>Just off the table</h2>
+          <h2>New Arrivals</h2>
         </div>
         <div class="rail-nav">
           <button id="prev" aria-label="Previous">←</button>
@@ -560,37 +566,22 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
     </div>
   </section>
 
-  <!-- MADE TO MEASURE ---------------------------------------------------- -->
-  <section class="mtm" id="measure">
+  <!-- COLLECTION ------------------------------------------------------- -->
+  <section class="mtm" id="collection">
     <div class="mtm-grid">
-      <div class="mtm-img"><img src="assets/ed1.jpg" alt="Hand-beaded lace midi from the SS '26 campaign" loading="lazy"></div>
+      <div class="mtm-img"><img src="assets/ed1.jpg" alt="Hand-beaded lace midi" loading="lazy"></div>
       <div class="mtm-body">
-        <h2>Your size is not a compromise</h2>
-        <p class="lede">Every piece on this site can be made to your measurements at no extra cost — the same fabric, the same finish, cut for you.</p>
-        <ol class="steps">
-          <li>
-            <span class="num">I</span>
-            <div>
-              <h3>Choose the silhouette</h3>
-              <p>Pick any style, then tell us the length and neckline you want it in.</p>
-            </div>
-          </li>
-          <li>
-            <span class="num">II</span>
-            <div>
-              <h3>Send your measurements</h3>
-              <p>Bust, waist, hip and height, taken at home with our guide — or book a video fitting with the studio.</p>
-            </div>
-          </li>
-          <li>
-            <span class="num">III</span>
-            <div>
-              <h3>Cut, fitted, dispatched</h3>
-              <p>Your piece is made to order and shipped in two to three weeks, with alterations on us.</p>
-            </div>
-          </li>
-        </ol>
-        <a class="btn btn-light" href="#">Start a custom order</a>
+        <h2>The collections</h2>
+        <p class="lede">Customised clothing that provides a perfect fit.</p>
+        <ul class="clist">
+          <li><a href="https://twentyseveneleven.in/collections/ss26">SS '26 <em>Shop</em></a></li>
+          <li><a href="https://twentyseveneleven.in/collections/gelato">Gelato <em>Shop</em></a></li>
+          <li><a href="https://twentyseveneleven.in/collections/aira-winters-embrace">Aira Winter's Embrace <em>Shop</em></a></li>
+          <li><a href="https://twentyseveneleven.in/collections/whimsical-wings">Whimsical Wings <em>Shop</em></a></li>
+          <li><a href="https://twentyseveneleven.in/collections/ebb-flow">Ebb &amp; Flow <em>Shop</em></a></li>
+          <li><a href="https://twentyseveneleven.in/collections/summer-spring">Summer Spring <em>Shop</em></a></li>
+        </ul>
+        <a class="btn btn-light" href="https://twentyseveneleven.in/collections/frontpage">Shop all</a>
       </div>
     </div>
   </section>
@@ -605,9 +596,9 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
         </div>
         <div class="house-copy">
           <h2>Twenty Seven Eleven</h2>
-          <p class="drop">We started in 2022 with one stubborn idea: that clothes should be built around the person wearing them, not the other way around. Everything we make begins as a flat pattern and ends on a real body.</p>
-          <p>The studio works in small runs — corsetry, capes, co-ord sets and occasion dresses — so each piece gets the attention a one-off deserves. Fabrics are sourced in short lengths, hand-finished, and cut to order. Nothing is mass produced, and nothing leaves until it fits.</p>
-          <a class="btn btn-ink" href="#" style="margin-top:8px">Read our story</a>
+          <p class="drop">Twenty-Seven Eleven is a fashion brand founded in 2022. The brand focuses on creating customised clothing that provides a perfect fit.</p>
+          <p>The brand offers dedicated service and attention to detail to make your shopping experience memorable. The studio is in Kolkata.</p>
+          <a class="btn btn-ink" href="https://twentyseveneleven.in/pages/about-brand" style="margin-top:8px">About us</a>
         </div>
       </div>
     </div>
@@ -618,23 +609,20 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <h2>SS '26 — In Full Colour</h2>
+          <h2>The SS '26 Collection</h2>
         </div>
-        <a class="label more" href="#">View the lookbook</a>
+        <a class="label more" href="https://twentyseveneleven.in/collections/ss26">Shop SS '26</a>
       </div>
       <div class="camp">
         <figure class="c1">
           <img src="assets/ed2.jpg" alt="Rosette-print dress" loading="lazy">
-          <figcaption>Look 04 — Rosette Dress</figcaption>
         </figure>
         <figure class="c2">
           <img src="assets/ed3.jpg" alt="Cobalt co-ord set" loading="lazy">
-          <figcaption>Look 11 — Cobalt Co-ord</figcaption>
         </figure>
         <div class="c3">
-          <h3>Colour, cut close to the body.</h3>
-          <p>Shot over two days in the studio: cobalt, ink and rose, with the corsetry left visible. Seventeen looks, all available made to measure.</p>
-          <a class="btn btn-ink" href="#">See all looks</a>
+          <h3>Now in store.</h3>
+          <a class="btn btn-ink" href="https://twentyseveneleven.in/collections/ss26">Shop SS '26</a>
         </div>
       </div>
     </div>
@@ -644,10 +632,11 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
   <section class="service" style="padding-block:0">
     <div class="wrap">
       <ul>
-        <li><h3>10,000+ dressed</h3><p>Since 2022, and counting.</p></li>
-        <li><h3>Made to order</h3><p>Cut after you place it, never before.</p></li>
-        <li><h3>Free alterations</h3><p>First fit not right? We'll fix it.</p></li>
-        <li><h3>Secure checkout</h3><p>UPI, cards and net banking.</p></li>
+        <li><h3>10k+ Happy Customers</h3><p>Trusted by thousands.</p></li>
+        <li><h3>Genuine Products</h3><p>Authenticity guaranteed.</p></li>
+        <li><h3>Quality Assured</h3><p>Tested and verified.</p></li>
+        <li><h3>Secured Payments</h3><p>Safe checkout process.</p></li>
+      </ul>
       </ul>
     </div>
   </section>
@@ -657,9 +646,9 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <h2>@twentyseveneleven_official</h2>
+          <h2>@twentyseven_eleven_official</h2>
         </div>
-        <a class="label more" href="#">Follow</a>
+        <a class="label more" href="https://www.instagram.com/twentyseven_eleven_official/">Follow</a>
       </div>
       <div class="gram">
         <a href="#"><img src="assets/p3.jpg" alt="Campaign still" loading="lazy"></a>
@@ -678,46 +667,50 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
     <div class="foot-top">
       <div>
         <img class="foot-mark" src="assets/logo-paper.png" alt="Twenty Seven Eleven">
-        <p>Made-to-measure ready-to-wear, cut one piece at a time since 2022.</p>
-        <h4>Get first look</h4>
+        <p>Twenty-Seven Eleven is a fashion brand founded in 2022, creating customised clothing that provides a perfect fit.</p>
+        <h4>Join our newsletter</h4>
+        <p style="margin-bottom:12px">Be the first to know about new collections and exclusive offers.</p>
         <form class="sign" onsubmit="return false">
-          <label for="email" style="position:absolute;left:-9999px">Email address</label>
-          <input id="email" type="email" placeholder="Email address" autocomplete="email">
-          <button type="submit">Join</button>
+          <label for="email" style="position:absolute;left:-9999px">Email</label>
+          <input id="email" type="email" placeholder="Email" autocomplete="email">
+          <button type="submit">Subscribe</button>
         </form>
       </div>
       <div>
         <h4>Shop</h4>
         <ul>
-          <li><a href="#">New in</a></li>
-          <li><a href="#">Corset Club</a></li>
-          <li><a href="#">Cape sets</a></li>
-          <li><a href="#">Co-ord sets</a></li>
-          <li><a href="#">Dresses</a></li>
+          <li><a href="https://twentyseveneleven.in/collections/corset-club">Corset Club</a></li>
+          <li><a href="https://twentyseveneleven.in/collections/gelato">Gelato</a></li>
+          <li><a href="https://twentyseveneleven.in/collections/aira-winters-embrace">Aira Winter's Embrace</a></li>
+          <li><a href="https://twentyseveneleven.in/collections/whimsical-wings">Whimsical Wings</a></li>
+          <li><a href="https://twentyseveneleven.in/collections/ebb-flow">Ebb &amp; Flow</a></li>
+          <li><a href="https://twentyseveneleven.in/collections/summer-spring">Summer Spring</a></li>
         </ul>
       </div>
       <div>
-        <h4>The House</h4>
+        <h4>Customer care</h4>
         <ul>
-          <li><a href="#">Our story</a></li>
-          <li><a href="#">Made to measure</a></li>
-          <li><a href="#">Book a consultation</a></li>
-          <li><a href="#">Stockists</a></li>
+          <li><a href="https://twentyseveneleven.in/pages/contact">Contact Us</a></li>
+          <li><a href="https://twentyseveneleven.in/pages/about-brand">About Us</a></li>
+          <li><a href="https://twentyseveneleven.in/pages/shipping-policy">Shipping</a></li>
+          <li><a href="https://twentyseveneleven.in/pages/returns-exchanges">Return &amp; Exchange</a></li>
+          <li><a href="https://twentyseveneleven.in/pages/refund-policy">Refund Policy</a></li>
+          <li><a href="https://twentyseveneleven.in/pages/privacy-policy">Privacy policy</a></li>
+          <li><a href="https://twentyseveneleven.in/pages/terms-and-condition">Terms &amp; Conditions</a></li>
         </ul>
       </div>
       <div>
-        <h4>Client Care</h4>
+        <h4>Reach us</h4>
+        <p>28B Shakespeare Sarani, Neelamber Building, 6th&nbsp;Floor, Flat 6G, Kolkata 700017</p>
         <ul>
-          <li><a href="#">Size &amp; measuring guide</a></li>
-          <li><a href="#">Shipping</a></li>
-          <li><a href="#">Returns &amp; alterations</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="mailto:twentyseveneleven.connect@gmail.com">twentyseveneleven.connect@gmail.com</a></li>
+          <li><a href="tel:+917605085881">+91 7605 085881</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bot">
-      <span>© 2026 Twenty Seven Eleven</span>
-      <span><a href="#">Instagram</a> &nbsp;·&nbsp; <a href="#">WhatsApp</a> &nbsp;·&nbsp; <a href="#">Privacy</a></span>
+      <span>© 2026 Twentyseveneleven_official</span>
+      <span><a href="https://www.instagram.com/twentyseven_eleven_official/">Instagram</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/twentyseven_eleven_official/">Facebook</a></span>
       <span>Site by Eclectic Digital</span>
     </div>
   </div>
@@ -729,11 +722,11 @@ footer{background:var(--ink);color:var(--on-dark);padding-block:clamp(50px,6vw,8
     <button class="close" id="close" aria-label="Close menu">✕</button>
   </div>
   <nav>
-    <a href="#collections">Collections</a>
-    <a href="#new">New In</a>
-    <a href="#measure">Made to Measure</a>
-    <a href="#house">The House</a>
-    <a href="#">Client Care</a>
+    <a href="https://twentyseveneleven.in/collections/bestseller">Bestseller</a>
+    <a href="#collections">Shop All</a>
+    <a href="#collection">Collection</a>
+    <a href="#house">About Us</a>
+    <a href="https://twentyseveneleven.in/pages/contact">Contact Us</a>
   </nav>
   <div class="foot">Bag (0) &nbsp;·&nbsp; Account &nbsp;·&nbsp; Search</div>
 </div>
